@@ -1,0 +1,93 @@
+<!doctype html>
+ <html Lang="en">
+    <head>
+    
+           <link rel="shortcut icon" href= "favicon.ico" type="image/x-icon" />
+           <meta charse	t="utf-8">	 
+           <title>Dev Enabled</title>
+           <link rel="stylesheet" href="style.css">
+       </head>
+       <body background="banner.png">
+           <div id="idk">
+           <header id="top_header">
+               <h5>Dev Notes</h5>
+               <div id="clockbox"></div>
+       
+       <script type="text/javascript">
+       var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+       var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+       
+       function GetClock(){
+       var d=new Date();
+       var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+       var nhour=d.getHours(),nmin=d.getMinutes(),ap;
+       if(nhour==0){ap=" AM";nhour=12;}
+       else if(nhour<12){ap=" AM";}
+       else if(nhour==12){ap=" PM";}
+       else if(nhour>12){ap=" PM";nhour-=12;}
+        
+       if(nmin<=9) nmin="0"+nmin;
+       
+       var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+ap+"";
+       document.getElementById('clockbox').innerHTML=clocktext;
+       }
+      
+       GetClock();
+       setInterval(GetClock,1000);
+       </script>
+       
+           </header> 
+           <div class="navbar">
+           <nav id="top_menu"> 
+              <ul> 
+                  <a href="index.html">Home</a>
+                  <a href="blog.html">Blog</a>
+                  <a href="blog.html">Tech Support</a>			
+                 <a href="contact_us.html">Contact Us</a>
+                 <a href="dev_Notes.html">Dev Notes</a>   
+              </ul>
+           </nav>	
+       </div>
+           <div id="new_div">	
+           <section id="main_section">
+               <article id="contact"id="main1">
+                   <div id="fade-in">
+                   <header>
+                       <hgroup>
+                       <h1>Notes</h1>
+                       </hgroup>
+                   </header>
+                   <p>Enter notes</p>  
+                   </div>
+               </article>
+       
+           <footer id="footer">
+                   <div id="music">
+                           <audio autoplay>
+                             <source src="dy.mp3" type="audio/mpeg">
+                             <p>If you can read this, your browser does not support the audio element.</p>
+                           </audio>
+                           </div>
+            <h6>Copyright "Welcome to the Website"</h6>
+           <input type="text" placeholder="Devconsole"  id="password" onchange="displayContact()"text" STYLE="color: #ddd; font-family: Verdana; font-weight: bold; font-size: 12px; background-color: #3e4b50 ;" size="10" maxlength="30";">
+ </footer>
+            </div>
+            <script>
+        
+                var contact = document.getElementById("contact");
+                var passfield = document.getElementById("password");
+        
+                contact.style.visibility = "hidden";
+        
+                function displayContact() {
+                    if (passfield.value == "notes") {
+                        contact.style.visibility = "visible";
+                    } else {
+                        contact.style.visibility = "hidden" ;
+                    }
+        
+                }
+            </script>	
+       </body>
+       </html>
+       
